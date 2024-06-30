@@ -1,0 +1,174 @@
+/* Created from Axel Nägele, South-Germany */
+
+@charset "UTF-8";
+
+/* ~~~~~~~~~~~~~~~ POSITION display position ~~~~~~~~~~~~~~~ */
+.container  /* GERÜST */            {display: flex; flex-direction: column; justify-content: center; align-items: center;} 
+                                       @media only screen and (min-width: 1000px) {
+                                       .container  {flex-direction: row; flex-wrap: no-wrap;}}
+                                       /*@media only screen and (min-width: 1000px) {*/ /*} für flexspalte*/
+.flexspalte                         {flex-direction: column;}
+.element1                           {order: 1;}
+.element2                           {order: 2;}
+.element3                           {order: 3;}
+.sticky                             {position: fixed; top: 0;} 
+.navi                               {display: flex; justify-content: space-between; align-items: center;} 
+.navilogo                           {display: none;}
+                                       @media only screen and (min-width: 500px) 
+                                       {.navilogo {display: block;}}
+.navititel                          {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+label.menue                         {display: block; position: relative; /*relative; absolute;*/ z-index: 99; left: 16px;}
+.linie                              {display: block; position: absolute; left:10px;  height: 4px;}
+.linie:nth-child(1)                 {top: 14px;}
+.linie:nth-child(2)                 {top: 28px;}
+.linie:nth-child(3)                 {top: 42px;}
+input#menue                         {display:none}
+nav.topmenu                         {position: absolute; z-index: 99; left: 0;}
+.naviinfo                           {display: block;}
+.elementoben                        {align-items: start;}
+.elementcenter                      {display: flex; justify-content: center;}
+.zgrafik                            {display: block;}
+.formularinfo                       {display: block; position: absolute; z-index: 99; top: 0; left: 0;}
+.fuss                               {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+
+/* ~~~~~~~~~~~~~~~ DIMENSIONS width height ~~~~~~~~~~~~~~~ */
+                                       @media only screen and (min-width: 1000px) {
+                                       .container > div  /* GERÜST */ {width: 50%;}}
+                                       /*@media only screen and (min-width: 1000px) {*/ /*} für flexspalte*/
+.flexspalte > div {width: 90%};
+html, body, input, textarea         {height: 100%;}
+input, textarea			            {width: 100%;}
+.navi                               {width: 100%; height: 120px;}
+label.menue                         {width: 75px; height: 50px;}
+.linie                              {width: 40px;}
+nav.topmenu                         {height: auto; max-height:0; overflow: hidden; width: 100%;}
+nav.topmenu li                      {width: 100%;}
+#menue:checked 
+   + .menue  
+   + nav.topmenu                    {max-height: 600px;}
+.kopf                               {width: 100%;}
+.zgrafik                            {max-width: 100%; height: auto;}
+.bildunterschrift                   {max-width: 400px;}
+.bildunterschriftschmal             {max-width: 299px;}
+.formularinfo                       {width: 100%;}
+.fuss                               {width: 100%;}
+
+/* ~~~~~~~~~~~~~~~ DISTANCES margin padding ~~~~~~~~~~~~~~~ */
+                                       @media only screen and (min-width: 1000px) {
+                                       .rahmen /* GERÜST */ {padding-left: 25%; padding-right: 25%;}}
+                                       @media only screen and (min-width: 1000px) {
+                                       .rahmenbreit /* GERÜST */ {padding-left: 0; padding-right: 0;}}
+.container /* GERÜST */             {margin: 50px; padding: 3%;}
+                                       @media only screen and (max-width: 600px) {
+                                       .container /* GERÜST */ {margin-left: 0; margin-right: 0;}}
+html, 
+body, 
+input, 
+textarea			                {margin:0; padding:0;}
+.navilogo, 
+.navititel, 
+.navimenue                          {padding: 20px;}
+label.menue                         {margin-left: auto; margin-right: auto; margin-bottom: 10px;}
+nav.topmenu                         {margin-top: 30px;}
+nav.topmenu li                      {padding: 10px;}
+nav.topmenu a                       {padding: 10px;}
+.kopf                               {padding-top: 150px;}
+.ztext                              {padding: 5%;}
+.zgrafik                            {margin: 0 auto;}
+.bildunterschrift                   {margin-left: 1%; margin-right: 1%;}
+                                       /*@media only screen and (min-width: 1000px) {
+                                       .bildunterschrift                   {margin-left: 25%; margin-right: 25%;}}*/
+.bildunterschriftschmal             {margin-left: 15%; margin-right: 15%;}    
+.formularinfo                       {padding: 20px;}                                   
+.fusslink a							{padding-left:10px; padding-right:10px;}
+.naviinfo                           {margin-left: 30px; padding-left: 15px; padding-right: 15px;}
+.fuss                               {margin-top: 40px; padding-top: 40px;}
+.fusslogo                           {padding: 25px}
+.fusstitel                          {margin-bottom: 60px; padding: 15px;}
+
+/* ~~~~~~~~~~~~~~~ COLORS + TRANSPARENCY color box-shadow ~~~~~~~~~~~~~~~ */
+a										      {color: hsl(0, 0%, 0%);}
+a:hover										{color: hsl(0, 0%, 60%);}
+.container /* GERÜST */             {box-shadow: 0 0 15px hsl(0, 0%, 75%);}
+.container > div /* GERÜST */       {background-color: hsl(0, 100%, 100%);}
+.orange                             {color: hsl(27, 100%, 50%);}
+.hellblau                           {color: hsl(214, 100%, 73%);}
+.dunkelblau                         {color: hsl(229, 92%, 14%);}
+.navi                               {background-color: hsl(214, 100%, 73%); opacity: 0.9;}
+/*                                       @media only screen and (min-width: 1000px) {
+                                       .navi   {background-color: hsl(138, 100%, 50%);}} /* Einblenden, um zwischen schmaler und breiter Ansicht zu wechseln */ */
+.firma                              {color: hsl(0, 0%, 99%);}
+.angebot                            {color: hsl(229, 92%, 14%);}
+.slogan                             {color: hsl(0, 100%, 100%);}
+.linie                              {background-color: hsl(0, 100%, 100%);} 
+nav.topmenu                         {color: hsl(0, 100%, 100%); background-color: hsl(214, 100%, 73%);}
+nav.topmenu a                       {color: hsl(0, 100%, 100%);}
+nav.topmenu a:hover                 {color: hsl(229, 92%, 14%);}
+.naviinfo                           {color: hsl(0, 0%, 100%); background-color: hsl(207, 88%, 68%);}
+.kopf                               {background-color: hsl(207, 88%, 68%); box-shadow: 0 0 15px hsl(0, 0%, 75%);}
+.wichtigeselementhellblau           {box-shadow: 0 0 15px hsl(207, 88%, 68%) !important;}
+.wichtigeselementorange             {box-shadow: 0 0 15px hsl(27, 100%, 50%) !important;}
+.formularinfofehler                 {background-color: hsl(336, 100%, 50%);}
+.formularinfook                     {background-color: hsl(78, 68%, 57%);}
+.formularinfo a                     {color: hsl(0, 0%, 100%);}
+.fusslink a									{color: hsl(0, 0%, 0%);}
+.fusslink a:hover,
+.fusslink a:focus                   {color: hsl(0, 100%, 100%); background-color: hsl(207, 88%, 68%);}
+.fuss                               {background-color: hsl(207, 88%, 68%); box-shadow: 0 0 15px hsl(0, 0%, 75%);}
+.fusstitel                          {color: hsl(0, 100%, 100%); background-color: hsla(78, 77%, 42%, 0.749); border-color: hsl(0, 100%, 100%);}
+
+/* ~~~~~~~~~~~~~~~ DESIGN border list-style-type border-radius  ~~~~~~~~~~~~~~~ */
+.container /* GERÜST */             {border-top-left-radius: 35px; border-top-right-radius: 35px; border-bottom-left-radius: 35px; border-bottom-right-radius: 35px;}
+label.menue                         {border-radius: 4px;}
+.linie                              {border-radius: 2px;}
+nav.topmenu li                      {list-style-type: none;}
+.listeohne li                       {list-style-type: none;}
+.naviinfo                           {border-radius: 15px;}
+.kopf                               {border-radius: 0 0 50px 50px;}
+.fusslink a:hover, 
+.fusslink a:focus                   {border-radius: 50px;}
+.fuss                               {border-radius: 50px 50px 0 0;}
+.fusstitel                          {border: 1px solid; border-radius: 15px;}
+
+/* ~~~~~~~~~~~~~~~ PICTURES background-image ~~~~~~~~~~~~~~~ */
+.kopf                               {background-image: url("../elemente/bilder/himmel.jpg");}
+   .kopf                               {background-size: cover; height: 320px; background-position: center; background-repeat: no-repeat;}
+.fuss                               {background-image: url("../elemente/bilder/gras.jpg");}
+   .fuss                               {background-size: cover; height: 300px; background-position: center; background-repeat: no-repeat;}
+
+/* ~~~~~~~~~~~~~~~ TEXT + FONT font-... text-... ~~~~~~~~~~~~~~~ */
+html, 
+body, 
+input, 
+textarea			                {font-family: "Titillium Web", sans-serif; font-weight: 700; font-style: normal;}
+input, 
+textarea                            {font-size: 20px;}         
+a									{text-decoration: underline;}
+a:hover								{text-decoration: underline;}
+.u                                  {text-decoration: underline;}
+.zeilenhoehe250                     {line-height: 2.5;}
+.ganzkleineschrift                  {font-size: 10px;}
+.kleineschrift                      {font-size: 15px;}
+.grosseschrift                      {font-size: 25px;}
+.ganzgrosseschrift                  {font-size: 30px;}
+.erstezeileausruecken               {text-indent: -20px; margin: 0;}
+.container > div /* GERÜST */       {font-size: 20px;}
+.container > box /* GERÜST */       {font-size: 20px;}
+nav.topmenu a                       {text-decoration: none;} 
+.textmittig                         {text-align: center;} 
+.fusslink a                         {text-decoration: none;} 
+.fussnote                           {font-size: 15px;}
+
+/* ~~~~~~~~~~~~~~~ SPECIALTIES cursor user-select Tricks ~~~~~~~~~~~~~~~ */
+.wegdamit                           {display: none;} /* Entfernt die "Fake-News" bei den Kontaktdaten */
+.menue                              {cursor: pointer;}
+
+/* ~~~~~~~~~~~~~~~ ANIMATIONS ~~~~~~~~~~~~~~~ */
+.linie                              {transition: 0.5s; transform-origin: center;}
+#menue:checked 
+   + .menue .linie:nth-child(1)     {transform: translateY(14px) rotate(-45deg);}
+#menue:checked 
+   + .menue .linie:nth-child(2)     {opacity:0;}
+#menue:checked 
+   + .menue .linie:nth-child(3)     {transform: translateY(-14px) rotate(45deg);}
+nav.topmenu                         {transition: all 0.5s;}
